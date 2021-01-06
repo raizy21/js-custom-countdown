@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,15 +10,16 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: Nunito, sans-serif;
 }
 
-/* bideo background */
+/* video background */
 .video-background {
   position: fixed;
   right: 0;
   bottom: 0;
-
+  width: 100vw;
+  height: auto;
 }
 
 video {
@@ -32,7 +33,9 @@ video {
   position: fixed;
   left: 0;
   top: 0;
-
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 /* container */
@@ -46,7 +49,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
-
+  background-color: rgba(255, 255,   255,   0.85)
 }
 
 .input-container {
@@ -79,7 +82,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: Nunito, sans-serif;
 }
 
 /* button */
@@ -96,6 +99,9 @@ button {
   outline: none;
 }
 
+button:hover {
+  filter: brightness(110%);
+}
 
 
 /* countdown */
@@ -104,7 +110,7 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -123,20 +129,48 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(226, 38, 38);
+  }
+  25% {
+    color: rgb(177, 223, 10);
+  }
+  50% {
+
+    color: rgb(21, 187, 21);
+    transform: scale(1.5);
+  }
+  75% {
+
+    color: rgb(57, 32, 170);
+  }
+  100% {
+    
+    color: rgb(206, 30, 127);
+  }
+}
 
 /* media luery: large smartphone (vertical) */
 @media screen and (max-width: 600px) {
   .video-background {
-
+    height: 100vh;
+    width: 100vw;
   }
   
   video {
-
+    object-fit: cover;
+    object-position: 70%;
     margin-top: -1px;
   }
 
   .container {
-
+    min-width: unset;
+    width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
